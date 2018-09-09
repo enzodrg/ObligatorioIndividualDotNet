@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ObligatorioIndividualNETModelStoreContainer" CdmEntityContainer="ObligatorioIndividualNETEntities">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(ObligatorioIndividualNETModel.Employee)">
+        <MappingFragment StoreEntitySet="EmployeesTPH">
+          <ScalarProperty Name="EmployeeId" ColumnName="EMP_ID" />
+          <ScalarProperty Name="StartDate" ColumnName="START_DATE" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ObligatorioIndividualNETModel.PartTimeEmployee)">
+        <MappingFragment StoreEntitySet="EmployeesTPH">
+          <ScalarProperty Name="HourlyRate" ColumnName="RATE" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EMP_ID" />
+          <Condition ColumnName="TYPE_EMP" Value="3420" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ObligatorioIndividualNETModel.FullTimeEmployee)">
+        <MappingFragment StoreEntitySet="EmployeesTPH">
+          <ScalarProperty Name="EmployeeId" ColumnName="EMP_ID" />
+          <ScalarProperty Name="Salary" ColumnName="SALARY" />
+          <Condition ColumnName="TYPE_EMP" Value="7011" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RangeHours">
+      <EntityTypeMapping TypeName="ObligatorioIndividualNETModel.RangeHour">
+        <MappingFragment StoreEntitySet="RangeHours">
+          <ScalarProperty Name="EmployeeId" ColumnName="EMPLOYEEID" />
+          <ScalarProperty Name="StartDate" ColumnName="STARTDATE" />
+          <ScalarProperty Name="Hours" ColumnName="HOURS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,6 @@
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\CrossCutting\bin\Debug\Shared.dll
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\CrossCutting\bin\Debug\Shared.pdb
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\CrossCutting\obj\Debug\Shared.csprojAssemblyReference.cache
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\CrossCutting\obj\Debug\Shared.csproj.CoreCompileInputs.cache
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\CrossCutting\obj\Debug\Shared.dll
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\CrossCutting\obj\Debug\Shared.pdb

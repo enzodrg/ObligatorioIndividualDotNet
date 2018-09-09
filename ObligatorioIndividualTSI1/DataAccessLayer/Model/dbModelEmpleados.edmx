@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ObligatorioIndividualNETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EmployeesTPH">
+          <Key>
+            <PropertyRef Name="EMP_ID" />
+          </Key>
+          <Property Name="EMP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="START_DATE" Type="datetime" Nullable="false" />
+          <Property Name="SALARY" Type="int" />
+          <Property Name="RATE" Type="float" />
+          <Property Name="TYPE_EMP" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RangeHours">
+          <Key>
+            <PropertyRef Name="HOURS" />
+            <PropertyRef Name="STARTDATE" />
+            <PropertyRef Name="EMPLOYEEID" />
+          </Key>
+          <Property Name="HOURS" Type="int" Nullable="false" />
+          <Property Name="STARTDATE" Type="datetime" Nullable="false" />
+          <Property Name="EMPLOYEEID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ObligatorioIndividualNETModelStoreContainer">
+          <EntitySet Name="EmployeesTPH" EntityType="Self.EmployeesTPH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RangeHours" EntityType="Self.RangeHours" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ObligatorioIndividualNETModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee" Abstract="true">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="ObligatorioIndividualNETEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="ObligatorioIndividualNETModel.Employee" />
+          <EntitySet Name="RangeHours" EntityType="ObligatorioIndividualNETModel.RangeHour" />
+        </EntityContainer>
+        <EntityType Name="FullTimeEmployee" BaseType="ObligatorioIndividualNETModel.Employee" >
+          <Property Name="Salary" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PartTimeEmployee" BaseType="ObligatorioIndividualNETModel.Employee" >
+          <Property Name="HourlyRate" Type="Double" />
+        </EntityType>
+        <EntityType Name="RangeHour">
+          <Key>
+            <PropertyRef Name="Hours" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="Hours" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ObligatorioIndividualNETModelStoreContainer" CdmEntityContainer="ObligatorioIndividualNETEntities">
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="IsTypeOf(ObligatorioIndividualNETModel.Employee)">
+              <MappingFragment StoreEntitySet="EmployeesTPH">
+                <ScalarProperty Name="EmployeeId" ColumnName="EMP_ID" />
+                <ScalarProperty Name="StartDate" ColumnName="START_DATE" />
+                <ScalarProperty Name="Name" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(ObligatorioIndividualNETModel.PartTimeEmployee)">
+              <MappingFragment StoreEntitySet="EmployeesTPH">
+                <ScalarProperty Name="HourlyRate" ColumnName="RATE" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EMP_ID" />
+                <Condition ColumnName="TYPE_EMP" Value="3420" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(ObligatorioIndividualNETModel.FullTimeEmployee)">
+              <MappingFragment StoreEntitySet="EmployeesTPH">
+                <ScalarProperty Name="EmployeeId" ColumnName="EMP_ID" />
+                <ScalarProperty Name="Salary" ColumnName="SALARY" />
+                <Condition ColumnName="TYPE_EMP" Value="7011" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RangeHours">
+            <EntityTypeMapping TypeName="ObligatorioIndividualNETModel.RangeHour">
+              <MappingFragment StoreEntitySet="RangeHours">
+                <ScalarProperty Name="EmployeeId" ColumnName="EMPLOYEEID" />
+                <ScalarProperty Name="StartDate" ColumnName="STARTDATE" />
+                <ScalarProperty Name="Hours" ColumnName="HOURS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

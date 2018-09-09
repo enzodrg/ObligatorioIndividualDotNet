@@ -1,0 +1,17 @@
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\ConsoleApp.deps.json
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\ConsoleApp.runtimeconfig.json
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\ConsoleApp.runtimeconfig.dev.json
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\ConsoleApp.dll
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\ConsoleApp.pdb
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\DataAccessLayer.dll
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\Shared.dll
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\Shared.pdb
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\DataAccessLayer.pdb
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\bin\Debug\netcoreapp2.0\DataAccessLayer.dll.config
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\obj\Debug\netcoreapp2.0\ConsoleApp.csprojAssemblyReference.cache
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\obj\Debug\netcoreapp2.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\obj\Debug\netcoreapp2.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\obj\Debug\netcoreapp2.0\ConsoleApp.AssemblyInfo.cs
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\obj\Debug\netcoreapp2.0\ConsoleApp.csproj.CopyComplete
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\obj\Debug\netcoreapp2.0\ConsoleApp.dll
+C:\Users\The first principle\Downloads\ObligatorioIndividualTSI1\ConsoleApp\obj\Debug\netcoreapp2.0\ConsoleApp.pdb
