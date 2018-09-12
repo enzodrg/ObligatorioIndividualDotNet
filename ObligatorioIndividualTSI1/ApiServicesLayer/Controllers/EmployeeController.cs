@@ -1,13 +1,13 @@
-﻿using BusinessLogicLayer;
-using Shared.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BusinessLogicLayer;
+using Shared.Entities;
 
-namespace ApiServices.Controllers
+namespace ApiServicesLayer.Controllers
 {
     public class EmployeeController : ApiController
     {

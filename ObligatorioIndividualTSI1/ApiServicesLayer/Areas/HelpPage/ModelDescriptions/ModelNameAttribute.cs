@@ -1,6 +1,6 @@
 using System;
 
-namespace ApiServices.Areas.HelpPage.ModelDescriptions
+namespace ApiServicesLayer.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.

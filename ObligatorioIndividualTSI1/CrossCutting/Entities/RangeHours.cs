@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-     public class RangeHours
+    [DataContract]
+    public class RangeHours
     {
+        [DataMember(Name = "Hours")]
         public int Hours;
+        [DataMember(Name = "StartDate")]
         public DateTime StartDate;
+        [DataMember(Name = "EmployeeId")]
         public int EmployeeId;
 
         public RangeHours( int eId, int h, DateTime sD) {

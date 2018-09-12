@@ -19,17 +19,27 @@ namespace BusinessLogicLayer
 
         public void AddEmployee(Employee emp)
         {
+            if (_dal.GetEmployee(emp.Id)==null)
+            { 
             _dal.AddEmployee(emp);
+            }
         }
 
         public void DeleteEmployee(int id)
         {
-            _dal.DeleteEmployee(id);
+            if (_dal.GetEmployee(id) != null)
+            {
+                _dal.DeleteEmployee(id);
+            }
         }
 
         public void UpdateEmployee(Employee emp)
         {
-           _dal.UpdateEmployee(emp);
+            if (_dal.GetEmployee(emp.Id) == null)
+            {
+                _dal.UpdateEmployee(emp);
+            }
+
         }
 
         public List<Employee> GetAllEmployees()

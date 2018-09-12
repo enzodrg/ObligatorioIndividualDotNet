@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace ApiServices
+namespace ApiServicesLayer
 {
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            // Configuración y servicios de API web
 
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            var cors = new EnableCorsAttribute("*","*","*");
+            var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors();
+
+            // Rutas de API web
+            config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

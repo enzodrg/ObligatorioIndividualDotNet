@@ -1,6 +1,6 @@
 using System;
 
-namespace ApiServices.Areas.HelpPage.ModelDescriptions
+namespace ApiServicesLayer.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

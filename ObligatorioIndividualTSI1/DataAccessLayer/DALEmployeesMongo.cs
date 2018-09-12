@@ -16,6 +16,7 @@ namespace DataAccessLayer
         public void AddEmployee(Employee emp)
         {
             if (emp != null)
+            
             {//si el empleado tiene algo
                 var collection = db.GetCollection<BsonDocument>("Employee");
                 var collectionEmp = db.GetCollection<Employee>("Employee");
